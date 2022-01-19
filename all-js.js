@@ -80,10 +80,40 @@ function timeConversion(s) {
   let hora = s.slice(0,2);
   let nuevoFormato = s.slice(2, -2)
   let horaTarde = hora * 1 + 12;
-
+  
   return hora === '12' && s.includes('AM')
-    ? '00' + nuevoFormato
-    : hora === '12' && s.includes('PM') || s.includes('AM')
-      ? hora + nuevoFormato
-      : horaTarde + nuevoFormato;
+  ? '00' + nuevoFormato
+  : hora === '12' && s.includes('PM') || s.includes('AM')
+  ? hora + nuevoFormato
+  : horaTarde + nuevoFormato;
 }
+
+//==================================
+
+function lonelyinteger(a) {
+  return a.find(el => a.indexOf(el) === a.lastIndexOf(el));
+}
+
+//==================================
+
+function diagonalDifference(arr) {
+    let sumaD1 = 0,
+        sumaD2 =0;
+    for(let i = 0; i < arr.length; i++){
+      sumaD1 += arr[i][i];
+      sumaD2 += arr[i][arr.length - 1 - i];
+    }
+    return Math.abs(sumaD1- sumaD2);
+}
+
+//==================================
+
+function countingSort(arr) {
+  let newArray = new Array(100).fill(0);
+  for (let item of arr) {
+    newArray[item]++
+  }
+  return newArray;
+}
+
+//==================================
