@@ -117,3 +117,11 @@ function countingSort(arr) {
 }
 
 //==================================
+// Sum of Digits / Digital Root
+
+function digital_root(n) {
+  if (n <= 9) return n;
+  return digital_root(n.toString().split('').reduce((a, b) => a + b * 1, 0))
+}
+
+//==================================
