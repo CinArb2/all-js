@@ -125,3 +125,17 @@ function digital_root(n) {
 }
 
 //==================================
+
+// Multiples of 3 or 5
+
+function solution(number) {
+
+  let suma = 0;
+  if (number < 0) return 0;
+  for (let i = 0; i < number; i++){
+    if (i % 5 === 0 || i % 3 === 0) {
+      suma += i;
+    }
+  }
+  return suma;
+}
