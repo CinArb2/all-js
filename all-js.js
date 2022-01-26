@@ -139,3 +139,23 @@ function solution(number) {
   }
   return suma;
 }
+
+//==================================
+
+function findOdd(A) {
+  let objetoConteo = A.reduce((objeto, b) => {
+    if (objeto[b]) {
+      objeto[b]++;
+    } else {
+      objeto[b] = 1;
+    }
+
+    return objeto;
+  }, {});
+  for (let item in objetoConteo) {
+    if (objetoConteo[item] % 2 !== 0) {
+      return item * 1;
+    }
+  }
+
+}
