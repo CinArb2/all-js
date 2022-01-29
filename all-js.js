@@ -159,3 +159,29 @@ function findOdd(A) {
   }
 
 }
+
+//==================================
+
+// Devolver los elementos de un arreglo en bloques de 2, cada bloque representa una página
+
+function paginateUsers(users, page) {
+    if (page === 0) { return [] }
+    return [users[(page * 2) - 2], users[(page * 2)-1]]
+}
+
+//==================================
+
+//Cuenta los estudiantes que han enviado su aplicación por cada canal
+
+function countApplicationsByChannel(users) {
+    return users.reduce((objeto, b) => {
+        if (b.application !== null) {
+            if (objeto[b.channel]) {
+                objeto[b.channel]++
+            } else {
+                objeto[b.channel] = 1;
+            }
+        }
+        return objeto;
+    }, {})
+}
