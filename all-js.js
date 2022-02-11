@@ -185,3 +185,17 @@ function countApplicationsByChannel(users) {
         return objeto;
     }, {})
 }
+
+// return the name of the top-paid person
+
+function topSalary(salaries) {
+  let valuePaid = 0;
+  let topPaid = null;
+  for (let [key, value] of Object.entries(salaries)) {
+    if (value > valuePaid) {
+      valuePaid = value;
+      topPaid = key;
+    }
+  }
+  return topPaid;
+}
