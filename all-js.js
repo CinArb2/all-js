@@ -199,3 +199,6 @@ function topSalary(salaries) {
   }
   return topPaid;
 }
+function topSalary(salaries) {
+  return Object.keys(salaries).reduce((a,b)=> salaries[a] > salaries[b] ? a : b)
+}
