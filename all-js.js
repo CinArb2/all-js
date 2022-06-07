@@ -202,3 +202,55 @@ function topSalary(salaries) {
 function topSalary(salaries) {
   return Object.keys(salaries).reduce((a,b)=> salaries[a] > salaries[b] ? a : b)
 }
+
+//calculates the sum of numbers
+function sumTo(n) {
+  
+  return n > 1? n + sumTo(n - 1): n;
+
+}
+
+//calculate factorial
+function factorial(n) {
+  
+  return n > 1 ? n * factorial(n - 1) : n;
+
+}
+
+// Write a function fib(n) that returns the n-th Fibonacci number.
+
+function fib(n) {
+  return n <= 1 ? n : fib(n - 1) + fib(n - 2)
+} // too slow
+
+// Fibonacci number with a for loop // its faster than the previous one
+
+function fib(n) {
+  let masAnterior = 0;
+  let anterior = 1;
+
+  if (n <= 1) return n;
+
+  for (let i = 2; i <= n; i++){
+   
+    let suma = anterior + masAnterior;
+    masAnterior = anterior;
+    anterior = suma;
+  }
+  return anterior;
+}
+
+//// func("abc", "bc") //returns true
+
+function checkWordEnd(a, b) {
+  
+  const secondWordLength = b.length
+
+  const final = a.slice(-secondWordLength)
+
+  return final === b
+}
+
+const checkWordEnd1 = (a, b) => a.slice(-b.length) === b
+
+const checkWordEnd2 = (a, b) => a.endsWith(b)
