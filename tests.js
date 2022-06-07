@@ -1,18 +1,37 @@
 
+//replace letters by numbers
 
-// func("abc", "bc") //returns true
+// func("abc def") // returns 123456
 
-function checkWordEnd(a, b) {
+// const sentence = "J"
+// const sentence2 = "a"
+
+// sentence.charCodeAt(0)
+
+// console.log(sentence.charCodeAt(0) - 64)
+// console.log(sentence2.charCodeAt(0))
+
+const lettersToNumbers = (sentence) => {
+
+  const arrayLetters = sentence.split('')
   
-  const secondWordLength = b.length
+  const mapArray = arrayLetters.map(el => el.toUpperCase().charCodeAt(0) - 64)
 
-  const final = a.slice(-secondWordLength)
-
-  return final === b
+  return mapArray.filter(el => el > 0 && el < 27).join(' ')
 }
 
-const checkWordEnd1 = (a, b) => a.slice(-b.length) === b
-
-const checkWordEnd2 = (a, b) => a.endsWith(b)
 
 
+const lettersToNumbers2 = (sentence) => {
+  const arrayLetters = sentence.split('')
+  
+  const reduceArray = arrayLetters.reduce((acc, letter) => {
+    let a = letter.toUpperCase().charCodeAt(0) - 64
+    
+    return a > 0 && a < 27 ? acc+= a : acc
+  }, "")
+  
+  return reduceArray
+}
+
+console.log(lettersToNumbers2('abc dēf'))
