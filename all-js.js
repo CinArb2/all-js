@@ -279,3 +279,7 @@ const lettersToNumbers2 = (sentence) => {
   
   return reduceArray
 }
+
+//isograma
+
+const isograma = (sentence) => new Set([...sentence]).size === sentence.length
