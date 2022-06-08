@@ -1,7 +1,14 @@
-//isograma
 
-const isograma = (sentence) => new Set([...sentence]).size === sentence.length
+const input = { nombres: ["Bruno", "Andrea"], edades: [20, 19]}
 
-console.log(isograma('ga to'))
+const transform = (names, ages) => {
+  return input.nombres.reduce((result, nombre, index) => {
+    return [...result, {
+      id: String(index + 1),
+      nombre,
+      edades: input.edades[index]
+    }]
+  }, [])
+}
 
-
+console.log(transform(input))

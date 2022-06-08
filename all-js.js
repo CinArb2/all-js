@@ -283,3 +283,31 @@ const lettersToNumbers2 = (sentence) => {
 //isograma
 
 const isograma = (sentence) => new Set([...sentence]).size === sentence.length
+
+// return elements that are repeated an even number of times
+
+const evenRepetition = (ar) => {
+  const checkRepetition = ar.reduce((acc, curr) => {
+    if (!acc[curr]) acc[curr] = 0
+    acc[curr] ++
+    return acc
+  }, {})
+
+  return Object.keys(checkRepetition).filter(el => checkRepetition[el] % 2 === 0)
+}
+
+// transform
+
+const input = { nombres: ["Bruno", "Andrea"], edades: [20, 19]}
+
+const transform = (names, ages) => {
+  return input.nombres.reduce((result, nombre, index) => {
+    return [...result, {
+      id: String(index + 1),
+      nombre,
+      edades: input.edades[index]
+    }]
+  }, [])
+}
+
+console.log(transform(input))
